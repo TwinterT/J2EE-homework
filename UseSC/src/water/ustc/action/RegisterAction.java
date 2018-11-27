@@ -9,6 +9,6 @@ public class RegisterAction {
 	public String handleRegister() {
 		//TODO register logic
 		System.out.println("dealing with regist logic!");
-		return REGIST_SUCCESS;
+		return REGIST_FAILED;
 	}
 }

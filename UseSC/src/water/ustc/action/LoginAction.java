@@ -9,6 +9,6 @@ public class LoginAction {
 	public String handleLogin() {
 		//TODO login logic
 		System.out.println("deal with login logical!");
-		return LOGIN_FAILED;
+		return LOGIN_SUCCESS;
 	}
 }

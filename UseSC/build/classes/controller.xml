@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sc-configuration>
+	<interceptor name="log"
+		class="water.ustc.interceptor.LogInterceptor" predo="preAction"
+		afterdo="afterAction">
+	</interceptor>
 
 	<controller>
-		<action name="Login" class="water.ustc.action.LoginAction" method="handleLogin">
-			<result name="success" type="forward" value="pages/welcome.jsp"></result>
-			<result name="failure" type="redirect" value="pages/failure.jsp"></result>
+		<action name="Login" class="water.ustc.action.LoginAction"
+			method="handleLogin">
+			<interceptro-ref name="log"></interceptro-ref>
+			<result name="success" type="forward"
+				value="pages/success_view.xml"></result>
+			<result name="failure" type="redirect"
+				value="pages/failure.jsp"></result>
 			<!-- some results -->
 		</action>
-	
-		<action name="Register" class="water.ustc.action.RegisterAction" method="handleRegister">
-			<result name="success" type="forward" value="pages/welcome.jsp"></result>
+
+		<action name="Register"
+			class="water.ustc.action.RegisterAction" method="handleRegister">
+			<interceptro-ref name="log"></interceptro-ref>
+			<result name="success" type="forward"
+				value="pages/welcome.jsp"></result>
 			<!-- some results -->
 		</action>
 		<!-- some actions -->
