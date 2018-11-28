@@ -24,6 +24,7 @@ import sc.ustc.items.Result;
 import sc.ustc.utils.ControllerXMLHelper;
 import sc.ustc.utils.ExecutHelperImp;
 import sc.ustc.utils.ProxyHandler;
+import sc.ustc.utils.XMLToHTMLHelper;
 
 public class SimpleController extends HttpServlet {
 
@@ -184,15 +185,25 @@ public class SimpleController extends HttpServlet {
 	 * @param resp
 	 * @throws ServletException
 	 * @throws IOException
+	 * @throws SAXException 
+	 * @throws ParserConfigurationException 
 	 */
-	public void doWithResult(Result result,HttpServletRequest req, HttpServletResponse resp,ServletContext context) throws ServletException, IOException {
+	public void doWithResult(Result result,HttpServletRequest req, HttpServletResponse resp,ServletContext context) throws ServletException, IOException, ParserConfigurationException, SAXException {
 		if(result == null)return;
 		
-		InputStream is = context.getResourceAsStream(result.getValue());
+		
+		
+		
 		
 		if (result.getType().equals(TYPE_FORWARD)) {
 			// 使用forward方式
-			req.getRequestDispatcher(result.getValue()).forward(req, resp);
+			if(result.getValue().endsWith("_view.xml")){
+				XMLToHTMLHelper helper = new XMLToHTMLHelper(result.getValue(),context);
+				String htmlString = helper.parseXML().produceHTML();
+				PrintWriter out = resp.getWriter();
+				out.print(htmlString);
+			}
+			else req.getRequestDispatcher(result.getValue()).forward(req, resp);
 		} else {
 			// 使用redirect方式
 			resp.sendRedirect(result.getValue());
