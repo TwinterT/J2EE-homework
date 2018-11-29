@@ -11,12 +11,12 @@
 			<textView>
 				<name>userName</name>
 				<label>Login Name: </label>
-				<value>Water</value>
+				<value>jack</value>
 			</textView>
 			<textView>
-				<name>userAge</name>
-				<label>Your Age: </label>
-				<value>30</value>
+				<name>userPassword</name>
+				<label>Password: </label>
+				<value>lalala</value>
 			</textView>
 			<buttonView>
 				<name>logoutButton</name>

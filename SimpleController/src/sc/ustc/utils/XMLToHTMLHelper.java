@@ -153,7 +153,7 @@ public class XMLToHTMLHelper {
 
 	/**
 	 * 获得一个Widget
-	 * 
+	 *  
 	 * @param node
 	 * @return
 	 */

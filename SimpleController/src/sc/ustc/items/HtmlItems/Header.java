@@ -20,6 +20,7 @@ public class Header implements HTMLProduce{
 	public String produceHTML() {
 		StringBuilder result = new StringBuilder();
 		result.append("<head>");
+		result.append("<meta charset=\"UTF-8\">");
 		result.append("<title>"+title+"</title>");
 		result.append("</head>");
 		return result.toString();
