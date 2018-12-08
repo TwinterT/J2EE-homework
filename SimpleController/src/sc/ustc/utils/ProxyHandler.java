@@ -50,9 +50,14 @@ public class ProxyHandler implements InvocationHandler {
 		// 利用反射创建类对象
 		Class<?> actionClass = Class.forName(className);
 		Method actionMethod = actionClass.getMethod(methodName, null);
+		Object object = actionClass.getDeclaredConstructor(null).newInstance(null);
+		
+		//在反射类中注入action中的bean对象
+		Method setMethod = actionClass.getMethod("setUserBean",Class.forName("water.ustc.dao.UserBean"));
+		setMethod.invoke(object, action.getUserBean());
 		
 		//获得结果
-		String result = (String)actionMethod.invoke(actionClass.getDeclaredConstructor(null).newInstance(null));
+		String result = (String)actionMethod.invoke(object);
 		action.setResult(result);
 		System.out.println(result);
 		//执行after方法

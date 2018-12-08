@@ -3,6 +3,8 @@ package sc.ustc.items;
 import java.util.ArrayList;
 import java.util.List;
 
+import sc.ustc.items.JDBCItems.BaseBean;
+
 public class Action {
 	
 	public static final String ACTION_TAG = "action";
@@ -15,6 +17,8 @@ public class Action {
 	private String name;
 	private String className;
 	private String methodName;
+	
+	private BaseBean userBean;
 	
 	private String result;
 	
@@ -75,6 +79,13 @@ public class Action {
 		return interceptors;
 	}
 
+	public BaseBean getUserBean() {
+		return userBean;
+	}
+	
+	public void setUserBean(BaseBean userBean) {
+		this.userBean = userBean;
+	}
 	
 	/**
 	 * 	在一个Interceptor的列表中按顺序找出action中定义的拦截器

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sc-di>
 	<bean id="user" class="water.ustc.dao.UserBean"></bean>
-	<bean id="Login" class="water.ustc.action.LoginAction">
+	<bean id="Login" class="sc.ustc.items.Action">
 		<field name="userBean" bean-ref="user"></field>
 	</bean>
 </sc-di>
