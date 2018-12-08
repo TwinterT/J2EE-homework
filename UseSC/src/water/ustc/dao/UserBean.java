@@ -1,67 +1,31 @@
 package water.ustc.dao;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
-public class UserBean {
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
+
+import sc.ustc.dao.Conversation;
+import sc.ustc.items.JDBCItems.BaseBean;
+
+public class UserBean extends BaseBean{
 	
 	public static final String SQL_DRIVER = "com.mysql.cj.jdbc.Driver";
 	public static final String SQL_URL = "jdbc:mysql://localhost:3306/j2ee?useSSL=false&serverTimezone=UTC";
 	public static final String SQL_USER_NAME = "root";
 	public static final String SQL_PASSWORD = "winter1996";
 	
-	private String userId;
-	private String userName;
-	private String userPass;
-	
-	/**
-	 * 	实现查询数据库的操作，并且匹配
-	 * @return
-	 * @throws ClassNotFoundException
-	 * @throws SQLException
-	 */
-	public boolean signIn() throws ClassNotFoundException, SQLException {
-		
-//		UserDAO userDAO = new UserDAO(SQL_DRIVER, SQL_URL, SQL_USER_NAME, SQL_PASSWORD);
-//		
-//		UserBean queryUser = userDAO.query(userName);
-//		
-//		userDAO.closeDBConnection();
-		
-		
-		//使用postgresql数据库
-		UsePostgreSQL usePostgreSQL = new UsePostgreSQL();
-		UserBean queryUser = usePostgreSQL.query(userName);
-		
-		
-		if(queryUser!=null) {
-			if(queryUser.getUserPass().equals(userPass)) {
-				return true;
-			}
-		}
-		return false;
+	public UserBean() {
+
 	}
 	
-	public String getUserId() {
-		return userId;
+	public UserBean(String name) {
+		super(name);
 	}
 	
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-	
-	public String getUserName() {
-		return userName;
-	}
-	
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	
-	public String getUserPass() {
-		return userPass;
-	}
-	
-	public void setUserPass(String userPass) {
-		this.userPass = userPass;
+	public UserBean(String name,String pass) {
+		super(name,pass);
 	}
 }

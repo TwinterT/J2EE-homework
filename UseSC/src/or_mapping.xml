@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OR-Mapppings>
+	<jdbc>
+		<property>
+			<name>driver_class</name>
+			<value>com.mysql.cj.jdbc.Driver</value>
+		</property>
+		<property>
+			<name>url_path</name>
+			<value>jdbc:mysql://localhost:3306/j2ee?useSSL=false&amp;serverTimezone=UTC</value>
+		</property>
+		<property>
+			<name>db_username</name>
+			<value>root</value>
+		</property>
+		<property>
+			<name>db_userpassword</name>
+			<value>winter1996</value>
+		</property>
+	</jdbc>
+	<class>
+		<name>UserBean</name>
+		<table>scuser</table>
+		<id>
+			<name>id</name>
+		</id>
+		<property>
+			<name>userName</name>
+			<column>name</column>
+			<type>String</type>
+			<lazy>false</lazy>
+		</property>
+		<property>
+			<name>userPass</name>
+			<column>password</column>
+			<type>String</type>
+			<lazy>true</lazy>
+		</property>
+	</class>
+</OR-Mapppings>

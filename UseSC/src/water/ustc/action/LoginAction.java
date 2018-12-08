@@ -1,6 +1,11 @@
 package water.ustc.action;
 
+import java.io.IOException;
 import java.sql.SQLException;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
 
 import water.ustc.dao.UserBean;
 
@@ -14,7 +19,7 @@ public class LoginAction {
 	
 	private String userPassword;
 	
-	public String handleLogin() throws ClassNotFoundException, SQLException {
+	public String handleLogin() throws ClassNotFoundException, SQLException, ParserConfigurationException, SAXException, IOException {
 		//TODO login logic
 		
 		//新建一个user对象

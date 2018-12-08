@@ -191,10 +191,6 @@ public class SimpleController extends HttpServlet {
 	public void doWithResult(Result result,HttpServletRequest req, HttpServletResponse resp,ServletContext context) throws ServletException, IOException, ParserConfigurationException, SAXException {
 		if(result == null)return;
 		
-		
-		
-		
-		
 		if (result.getType().equals(TYPE_FORWARD)) {
 			// 使用forward方式
 			if(result.getValue().endsWith("_view.xml")){

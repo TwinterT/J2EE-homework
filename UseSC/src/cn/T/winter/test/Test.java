@@ -20,7 +20,6 @@ public class Test {
 
 		UsePostgreSQL usePostgreSQL = new UsePostgreSQL();
 
-//		usePostgreSQL.insert("tom", "lalala");
-		usePostgreSQL.delete("jack");
+		usePostgreSQL.insert("jack", "lalala");
 	}
 }
