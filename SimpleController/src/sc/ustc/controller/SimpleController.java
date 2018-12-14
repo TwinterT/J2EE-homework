@@ -270,6 +270,7 @@ public class SimpleController extends HttpServlet {
 			if (result.getValue().endsWith("_view.xml")) {
 				XMLToHTMLHelper helper = new XMLToHTMLHelper(result.getValue(), context);
 				String htmlString = helper.parseXML().produceHTML();
+				System.out.println(htmlString);
 				PrintWriter out = resp.getWriter();
 				out.print(htmlString);
 			} else

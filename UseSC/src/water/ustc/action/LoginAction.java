@@ -17,9 +17,9 @@ public class LoginAction {
 	
 	private UserBean userBean;
 	
-	private String userName;
-	
-	private String userPassword;
+//	private String userName;
+//	
+//	private String userPassword;
 	
 	public String handleLogin() throws ClassNotFoundException, SQLException, ParserConfigurationException, SAXException, IOException {
 		//TODO login logic
@@ -32,7 +32,6 @@ public class LoginAction {
 		//获得登录处理结果
 		if(userBean == null)return LOGIN_FAILED;
 		else{
-			System.out.println("fafafafafafafafaff!");
 			System.out.println("name:"+userBean.getUserName());
 			System.out.println("pass:"+userBean.getUserPass());
 			boolean result = userBean.signIn();
