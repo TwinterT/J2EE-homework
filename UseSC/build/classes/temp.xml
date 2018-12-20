@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<log>
+	<action>
+		<name>Login</name>
+		<s-time>Tue Dec 18 21:38:55 CST 2018</s-time>
+		<e-time>Tue Dec 18 21:38:56 CST 2018</e-time>
+		<result>success</result>
+	</action>
+	<action>
+		<name>Register</name>
+		<s-time>Tue Dec 18 21:40:56 CST 2018</s-time>
+		<e-time>Tue Dec 18 21:40:56 CST 2018</e-time>
+		<result>success</result>
+	</action>
+</log>
